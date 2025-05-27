@@ -21,6 +21,20 @@
         />
     </head>
     <body>
+        <!-- welcome.exe -->
+        <button
+            class="flex flex-col items-center absolute m-2 opacity-0 startup-element z-10"
+            id="welcome-app"
+        >
+            <img
+                class="h-10"
+                src="assets/images/window.png"
+                alt="window icon"
+            />
+
+            <p class="white-text">welcome.exe</p>
+        </button>
+
         <!-- Desktop -->
         <div
             class="flex flex-wrap justify-center items-center h-[100vh] overflow-hidden"
@@ -29,21 +43,30 @@
 
         <!-- Taskbar -->
         <div
-            class="fixed flex justify-between bottom-0 w-full p-1 border-3d-top gray-background opacity-0 startup-element"
+            class="fixed flex justify-between items-center bottom-0 w-full p-1 border-3d-top gray-background opacity-0 startup-element"
         >
-            <!-- Start button -->
-            <button
-                class="flex justify-center items-center p-1 border-3d button-3d"
-                id="start-button"
-            >
-                <img class="h-6" src="assets/images/window.png" alt="icon" />
+            <div class="flex gap-3">
+                <!-- Start button -->
+                <button
+                    class="flex justify-center items-center p-1 border-3d button-3d"
+                    id="start-button"
+                >
+                    <img
+                        class="h-6"
+                        src="assets/images/window.png"
+                        alt="icon"
+                    />
 
-                <p class="ml-1 font-bold">Start</p>
-            </button>
+                    <p class="ml-1 font-bold">Start</p>
+                </button>
+
+                <!-- Open windows -->
+                <div class="flex gap-1" id="taskbar-apps"></div>
+            </div>
 
             <!-- Time -->
             <div
-                class="flex px-2 justify-center items-center border-3-reverse gray-background opacity-0 startup-element"
+                class="flex px-2 justify-center items-center border-3d-reverse gray-background opacity-0 startup-element"
                 id="clock"
             >
                 Loading...
