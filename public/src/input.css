@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "W95FA";
+    src: url("../assets/fonts/W95FA.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --gray: #c3c3c3;
+    --gray-light: #f5f5f5;
+    --gray-dark: #141414;
+}
+
+body {
+    font-family: "W95FA", sans-serif;
+    background-color: #008181;
+}
+
+/* Text colors */
+.white-text {
+    color: var(--gray-light);
+}
+
+/* Border and background */
+.gray-background {
+    background-color: var(--gray);
+}
+
+.border-3d-top {
+    border-top: 3px solid var(--gray-light);
+}
+
+.border-3d {
+    border-top: 3px solid var(--gray-light);
+    border-left: 3px solid var(--gray-light);
+    border-right: 3px solid var(--gray-dark);
+    border-bottom: 3px solid var(--gray-dark);
+}
+
+.border-3-reverse {
+    border-top: 3px solid var(--gray-dark);
+    border-left: 3px solid var(--gray-dark);
+    border-right: 3px solid var(--gray-light);
+    border-bottom: 3px solid var(--gray-light);
+}
+
+.button-3d:active {
+    border-top: 3px solid var(--gray-dark);
+    border-left: 3px solid var(--gray-dark);
+    border-right: 3px solid var(--gray-light);
+    border-bottom: 3px solid var(--gray-light);
+}
+
+.title-bar {
+    background-color: #000082;
+    padding: 3px;
+}

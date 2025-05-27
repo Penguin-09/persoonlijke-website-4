@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Son95</title>
+
+        <!-- CSS -->
+        <link href="src/output.css" rel="stylesheet" />
+
+        <!-- JS -->
+        <script src="scripts/script.js" defer></script>
+        <script src="scripts/windows.js" defer></script>
+        <script src="scripts/startup.js" defer></script>
+
+        <!-- Favicon -->
+        <link
+            rel="shortcut icon"
+            href="assets/images/window.png"
+            type="image/x-icon"
+        />
+    </head>
+    <body>
+        <!-- Desktop -->
+        <div
+            class="flex flex-wrap justify-center items-center h-[100vh] overflow-hidden"
+            id="desktop"
+        ></div>
+
+        <!-- Taskbar -->
+        <div
+            class="fixed flex justify-between bottom-0 w-full p-1 border-3d-top gray-background opacity-0 startup-element"
+        >
+            <!-- Start button -->
+            <button
+                class="flex justify-center items-center p-1 border-3d button-3d"
+                id="start-button"
+            >
+                <img class="h-6" src="assets/images/window.png" alt="icon" />
+
+                <p class="ml-1 font-bold">Start</p>
+            </button>
+
+            <!-- Time -->
+            <div
+                class="flex px-2 justify-center items-center border-3-reverse gray-background opacity-0 startup-element"
+                id="clock"
+            >
+                Loading...
+            </div>
+        </div>
+    </body>
+</html>
