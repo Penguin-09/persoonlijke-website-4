@@ -8,9 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --spacing: 0.25rem;
-    --container-sm: 24rem;
     --container-md: 28rem;
-    --container-lg: 32rem;
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-bold: 700;
@@ -170,12 +168,6 @@
   .fixed {
     position: fixed;
   }
-  .top-10 {
-    top: calc(var(--spacing) * 10);
-  }
-  .top-20 {
-    top: calc(var(--spacing) * 20);
-  }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
@@ -194,14 +186,17 @@
   .me-1 {
     margin-inline-end: calc(var(--spacing) * 1);
   }
-  .mb-2 {
-    margin-bottom: calc(var(--spacing) * 2);
-  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
+  }
+  .ml-5 {
+    margin-left: calc(var(--spacing) * 5);
   }
   .flex {
     display: flex;
@@ -209,26 +204,20 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
+  .h-30 {
+    height: calc(var(--spacing) * 30);
+  }
   .h-\[100vh\] {
     height: 100vh;
   }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
-  }
   .w-6 {
     width: calc(var(--spacing) * 6);
-  }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
   }
   .w-30 {
     width: calc(var(--spacing) * 30);
@@ -238,21 +227,6 @@
   }
   .w-full {
     width: 100%;
-  }
-  .w-lg {
-    width: var(--container-lg);
-  }
-  .w-md {
-    width: var(--container-md);
-  }
-  .w-sm {
-    width: var(--container-sm);
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -281,12 +255,14 @@
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
+  .gap-7 {
+    gap: calc(var(--spacing) * 7);
+  }
   .overflow-hidden {
     overflow: hidden;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .bg-\[\#000000\] {
+    background-color: #000000;
   }
   .bg-\[\#ffffff\] {
     background-color: #ffffff;
@@ -294,11 +270,11 @@
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
   .p-3 {
     padding: calc(var(--spacing) * 3);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
   }
   .px-1 {
     padding-inline: calc(var(--spacing) * 1);
@@ -323,18 +299,11 @@
   .break-all {
     word-break: break-all;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .opacity-0 {
     opacity: 0%;
   }
   .opacity-100 {
     opacity: 100%;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .sm\:w-md {
     @media (width >= 40rem) {
@@ -352,7 +321,8 @@
   --gray: #c3c3c3;
   --gray-light: #f5f5f5;
   --gray-dark: #141414;
-  --beige: #FFF8DC;
+  --beige: #fff8dc;
+  --blue: #0000ff;
 }
 body {
   font-family: "W95FA", sans-serif;
@@ -364,14 +334,14 @@ button:hover {
 .white-text {
   color: var(--gray-light);
 }
+.link-text {
+  color: var(--blue);
+}
 .gray-background {
   background-color: var(--gray);
 }
 .beige-background {
   background-color: var(--beige);
-}
-.border-3d-top {
-  border-top: 3px solid var(--gray-light);
 }
 .border-3d {
   border-top: 3px solid var(--gray-light);
@@ -385,6 +355,28 @@ button:hover {
   border-right: 3px solid var(--gray-light);
   border-bottom: 3px solid var(--gray-light);
 }
+.border-3d-top {
+  border-top: 3px solid var(--gray-light);
+}
+.border-3d-bottom {
+  border-bottom: 3px solid var(--gray-light);
+}
+.border-3d-no-top {
+  border-left: 3px solid var(--gray-light);
+  border-right: 3px solid var(--gray-dark);
+  border-bottom: 3px solid var(--gray-dark);
+}
+.border-3d-no-bottom {
+  border-top: 3px solid var(--gray-light);
+  border-left: 3px solid var(--gray-light);
+  border-right: 3px solid var(--gray-dark);
+}
+.border-3d-bottom-reverse {
+  border-top: 3px solid var(--gray-light);
+  border-left: 3px solid var(--gray-light);
+  border-right: 3px solid var(--gray-dark);
+  border-bottom: 3px solid var(--gray-light);
+}
 .button-3d:active {
   border-top: 3px solid var(--gray-dark);
   border-left: 3px solid var(--gray-dark);
@@ -395,26 +387,14 @@ button:hover {
   background-color: #000082;
   padding: 3px;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }

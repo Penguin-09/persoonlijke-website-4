@@ -33,6 +33,7 @@ createWindow(
     welcomeWindowID,
     true,
     false,
+    true,
     "assets/images/executable.png"
 );
 
@@ -66,6 +67,7 @@ welcomeApp.addEventListener("click", () => {
         welcomeWindowID,
         false,
         false,
+        true,
         "assets/images/executable.png"
     );
 });
@@ -75,7 +77,7 @@ const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", () => {
     const errorWindowID = `error-window${Math.floor(Math.random() * 1000)}`;
     const errorWindowContent = `
-        <div class="flex flex-col items-center gap-3">
+        <div class="flex flex-col items-center m-3 gap-3">
             <div class="flex items-center justify-center">
                 <img class="h-10 pe-3" src="assets/images/error.png" alt="Error icon">
 
@@ -97,6 +99,7 @@ startButton.addEventListener("click", () => {
         errorWindowID,
         false,
         true,
+        true,
         "assets/images/error.png"
     );
 });
@@ -110,7 +113,7 @@ aboutMeApp.addEventListener("click", () => {
     const aboutMeWindowContent = `
         <div class="p-1 w-full sm:w-md border-3d-reverse bg-[#ffffff]">
             <p class="mb-4">-------------------<br>ABOUT ME<br>-------------------<br>Hi!, I'm Son, a full-stack web developer and student at Bit Academy.</p>
-            <p>I have experience with many different technologies and programming languages, and I'm particularly interested in creating web applications. I was interested in computers and programming from a young age, attending programming courses and camps during most of my childhood vacations where I learned the fundamentals.</p>
+            <p>I have experience with many different technologies and programming languages, and I'm particularly interested in creating web applications. I was interested in computers and programming from a young age, attending programming courses and camps during most of my childhood.</p>
         </div>
     `;
 
@@ -120,6 +123,65 @@ aboutMeApp.addEventListener("click", () => {
         aboutMeWindowID,
         false,
         false,
+        true,
         "assets/images/text.png"
+    );
+});
+
+// Picture of me
+const pictureOfMeApp = document.getElementById("picture-of-me-app");
+pictureOfMeApp.addEventListener("click", () => {
+    const pictureOfMeAppID = `picture-of-me-window${Math.floor(
+        Math.random() * 1000
+    )}`;
+    const pictureOfMeContent = `
+        <div class="border-3d-reverse bg-[#000000]">
+            <img src="assets/images/me.png" alt="Picture of me">
+        </div>
+    `;
+
+    createWindow(
+        "Image",
+        pictureOfMeContent,
+        pictureOfMeAppID,
+        false,
+        false,
+        false,
+        "assets/images/picture.png"
+    );
+});
+
+// System info
+const userInfoApp = document.getElementById("user-info-app");
+userInfoApp.addEventListener("click", () => {
+    const userInfoAppID = `user-info-window${Math.floor(Math.random() * 1000)}`;
+    const userInfoContent = `
+        <div class="flex items-center p-5 gap-7">
+            <img class="h-30" src="assets/images/system.png" alt="user icon">
+
+            <div>
+                <p>General info:</p>
+                <p class="ml-5">Son Bram van der Burg</p>
+                <p class="ml-5 mb-5">17 years old</p>
+
+                <p>Contact info:</p>
+                <p class="ml-5">son@vdburg.site</p>
+                <p class="ml-5 mb-5">+31 6 570 466 79</p>
+
+                <p>Links</p>
+                <a class="ml-5 link-text" href="https://www.linkedin.com/in/son-bram/" target="_blank">LinkedIn</a><br>
+                <a class="ml-5 link-text" href="https://github.com/Penguin-09" target="_blank">GitHub</a>
+            </div>
+        </div>
+    `;
+
+    createWindow(
+        "User settings",
+        userInfoContent,
+        userInfoAppID,
+        false,
+        false,
+        true,
+        "assets/images/operating-system.png"
     );
 });

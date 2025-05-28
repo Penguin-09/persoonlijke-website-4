@@ -4,15 +4,13 @@ console.info("Window script initialized");
  * Attach a sound effect to all buttons
  */
 export function attachSoundEffectToButtons() {
-    const buttons = document.querySelectorAll("button");
-    const clickSound = new Audio("assets/sounds/click.wav");
+    // const button = document.getElementById(elementID);
+    // const clickSound = new Audio("assets/sounds/click.wav");
 
-    buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-            clickSound.currentTime = 0;
-            clickSound.play();
-        });
-    });
+    // button.addEventListener("click", () => {
+    //     clickSound.currentTime = 0;
+    //     clickSound.play();
+    // });
 }
 
 /**
@@ -27,6 +25,7 @@ export function createWindow(
     id,
     startup = false,
     isError = false,
+    hasPadding = true,
     pathToIcon = "assets/images/error.png"
 ) {
     const desktop = document.getElementById("desktop");
@@ -35,6 +34,11 @@ export function createWindow(
     // Hide element at first if it is a startup element
     if (startup) {
         opacity = "opacity-0";
+    }
+
+    // Add padding if specified
+    if (hasPadding) {
+        hasPadding = "p-3";
     }
 
     const newElement = `
@@ -52,7 +56,7 @@ export function createWindow(
                 </button>
             </div>
 
-            <div class="p-3">${content}</div>
+            <div class="${hasPadding}">${content}</div>
         </div>
     `;
 
