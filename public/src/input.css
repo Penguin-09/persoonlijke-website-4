@@ -13,11 +13,13 @@
     --gray-dark: #141414;
     --beige: #fff8dc;
     --blue: #0000ff;
+    --blue-dark: #00008b;
+    --teal: #008181;
 }
 
 body {
     font-family: "W95FA", sans-serif;
-    background-color: #008181;
+    background-color: var(--teal);
 }
 
 button:hover {
@@ -41,6 +43,12 @@ button:hover {
 .beige-background {
     background-color: var(--beige);
 }
+
+.title-bar {
+    background-color: var(--blue-dark);
+    padding: 3px;
+}
+
 .border-3d {
     border-top: 3px solid var(--gray-light);
     border-left: 3px solid var(--gray-light);
@@ -87,9 +95,4 @@ button:hover {
     border-left: 3px solid var(--gray-dark);
     border-right: 3px solid var(--gray-light);
     border-bottom: 3px solid var(--gray-light);
-}
-
-.title-bar {
-    background-color: #000082;
-    padding: 3px;
 }

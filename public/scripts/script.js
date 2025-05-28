@@ -1,8 +1,8 @@
-import { createWindow, attachSoundEffectToButtons } from "./windows.js";
+import { createWindow, attachSoundEffectToDocument } from "./windows.js";
 
 console.info("Main script initialized");
 
-attachSoundEffectToButtons();
+attachSoundEffectToDocument();
 
 // Welcome window
 let welcomeWindowID = `error-window${Math.floor(Math.random() * 1000)}`;
@@ -183,5 +183,56 @@ userInfoApp.addEventListener("click", () => {
         false,
         true,
         "assets/images/operating-system.png"
+    );
+});
+
+// Projects app
+// const projectsApp = document.getElementById("projects-app");
+// projectsApp.addEventListener("click", () => {
+//     const projectsAppID = `user-info-window${Math.floor(Math.random() * 1000)}`;
+//     const projectsAppContent = `
+//         <div class="flex gap-3">
+//             <p><span class="underline">F</span>ile</p>
+//             <p><span class="underline">E</span>dit</p>
+//             <p><span class="underline">V</span>iew</p>
+//             <p>F<span class="underline">a</span>vourites</p>
+//             <p><span class="underline">H</span>elp</p>
+//         </div>
+//     `;
+
+//     createWindow(
+//         "Internet Explorer",
+//         projectsAppContent,
+//         projectsAppID,
+//         false,
+//         false,
+//         true,
+//         "assets/images/browser.png"
+//     );
+// });
+
+// Tech Stack App
+const techStackApp = document.getElementById("tech-stack-app");
+techStackApp.addEventListener("click", () => {
+    const techStackAppID = `tech-stack-window${Math.floor(
+        Math.random() * 1000
+    )}`;
+    const aboutMeWindowContent = `
+        <div class="p-1 w-full sm:w-md border-3d-reverse bg-[#ffffff]">
+            <p class="mb-4">-------------------<br>MY TECH STACK<br>-------------------<br>I've learned a lot in my time as a web developer. Below is a list of every language and technology i have experience with.</p>
+            <p class="mb-4">FRONT-END<br>HTML / CSS / JavaScript / Bootstrap / Tailwind CSS / Typescript / Figma</p>
+            <p class="mb-4">BACK-END<br>PHP / SQL / C# / C++ / C / Figma / MongoDB</p>
+            <p class="mb-4">OTHER TOOLS<br>OOP / Git / SCRUM / Arduino</p>
+        </div>
+    `;
+
+    createWindow(
+        "Text Viewer",
+        aboutMeWindowContent,
+        techStackAppID,
+        false,
+        false,
+        true,
+        "assets/images/text.png"
     );
 });

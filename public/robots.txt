@@ -1,0 +1,27 @@
+# Robots.txt for Son95 - Personal Portfolio Website
+# Allow all web crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vdburg.site/sitemap.xml
+
+# Optional: Crawl delay (in seconds) - uncomment if needed
+# Crawl-delay: 1
+
+# Disallow crawling of any sensitive files (none for this portfolio)
+# Disallow: /private/
+# Disallow: /admin/
+
+# Allow specific important files
+Allow: /assets/
+Allow: /scripts/
+Allow: /src/
+
+# Block access to development files if they exist
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.gitignore
+Disallow: /package.json
+Disallow: /README.md

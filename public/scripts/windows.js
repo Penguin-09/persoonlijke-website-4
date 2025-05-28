@@ -1,16 +1,15 @@
 console.info("Window script initialized");
 
 /**
- * Attach a sound effect to all buttons
+ * Attach a sound effect to the document
  */
-export function attachSoundEffectToButtons() {
-    // const button = document.getElementById(elementID);
-    // const clickSound = new Audio("assets/sounds/click.wav");
+export function attachSoundEffectToDocument() {
+    const clickSound = new Audio("assets/sounds/click.wav");
 
-    // button.addEventListener("click", () => {
-    //     clickSound.currentTime = 0;
-    //     clickSound.play();
-    // });
+    document.addEventListener("click", () => {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    });
 }
 
 /**
@@ -61,9 +60,6 @@ export function createWindow(
     `;
 
     desktop.insertAdjacentHTML("beforeend", newElement);
-
-    // Attach click sounds to all buttons
-    attachSoundEffectToButtons();
 
     // Play error sound if the window is an error
     if (isError) {
