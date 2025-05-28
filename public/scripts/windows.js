@@ -3,8 +3,9 @@ console.info("Window script initialized");
 /**
  * Attach a sound effect to all buttons
  */
-function attachSoundEffectToButtons() {
+export function attachSoundEffectToButtons() {
     const buttons = document.querySelectorAll("button");
+    const clickSound = new Audio("assets/sounds/click.wav");
 
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -20,7 +21,7 @@ function attachSoundEffectToButtons() {
  * @param {string} content Everything that is displayed in the window
  * @param {boolean} startup If true, the window will be hidden at first and slowly revealed
  */
-function createWindow(
+export function createWindow(
     title = "Error",
     content = "Error",
     id,
@@ -62,6 +63,7 @@ function createWindow(
 
     // Play error sound if the window is an error
     if (isError) {
+        const errorSound = new Audio("assets/sounds/error.wav");
         errorSound.currentTime = 0;
         errorSound.play();
     }
@@ -97,104 +99,3 @@ function addWindowToTaskbar(
 
     console.debug(`Added window to taskbar: ${title}`);
 }
-
-const clickSound = new Audio("assets/sounds/click.wav");
-const errorSound = new Audio("assets/sounds/error.wav");
-
-attachSoundEffectToButtons();
-
-// Welcome window
-let welcomeWindowID = `error-window${Math.floor(Math.random() * 1000)}`;
-const welcomeWindowContent = `
-    <div class="flex flex-col w-full sm:w-md gap-2">
-        <h1 class="font-bold text-2xl">
-            Welcome to Son95!
-        </h1>
-
-        <div class="border-3d-reverse beige-background p-1">
-            Son95 is a recreation of the classic Windows 95 experience, reimagined as a personal portfolio. With Son95, you can discover information about me, my projects, and more.
-        </div>
-
-        <div class="w-full flex justify-end">
-            <button
-                class="px-1 border-3d button-3d"
-                onclick="document.querySelectorAll('.${welcomeWindowID}').forEach(element => element.remove());"
-            >
-                Got it!
-            </button>
-        </div>
-    </div>
-`;
-
-createWindow(
-    "Welcome!",
-    welcomeWindowContent,
-    welcomeWindowID,
-    true,
-    false,
-    "assets/images/window.png"
-);
-
-const welcomeApp = document.getElementById("welcome-app");
-welcomeApp.addEventListener("click", () => {
-    welcomeWindowID = `error-window${Math.floor(Math.random() * 1000)}`;
-    const welcomeWindowContent = `
-        <div class="flex flex-col w-full sm:w-md gap-2">
-            <h1 class="font-bold text-2xl">
-                Welcome to Son95!
-            </h1>
-
-            <div class="border-3d-reverse beige-background p-1">
-                Son95 is a recreation of the classic Windows 95 experience, reimagined as a personal portfolio. With Son95, you can discover information about me, my projects, and more.
-            </div>
-
-            <div class="w-full flex justify-end">
-                <button
-                    class="px-1 border-3d button-3d"
-                    onclick="document.querySelectorAll('.${welcomeWindowID}').forEach(element => element.remove());"
-                >
-                    Got it!
-                </button>
-            </div>
-        </div>
-    `;
-
-    createWindow(
-        "Welcome!",
-        welcomeWindowContent,
-        welcomeWindowID,
-        false,
-        false,
-        "assets/images/window.png"
-    );
-});
-
-// Error window
-const startButton = document.getElementById("start-button");
-startButton.addEventListener("click", () => {
-    const errorWindowID = `error-window${Math.floor(Math.random() * 1000)}`;
-    const errorWindowContent = `
-        <div class="flex flex-col items-center gap-3">
-            <div class="flex items-center justify-center">
-                <img class="h-10 pe-3" src="assets/images/error.png" alt="Error icon">
-
-                <p>There was en error opening the start menu. Sorry!</p>
-            </div>
-
-            <button
-                class="w-fit px-1 border-3d button-3d"
-                onclick="document.querySelectorAll('.${errorWindowID}').forEach(element => element.remove());"
-            >
-                OK
-            </button>
-        </div>
-    `;
-    createWindow(
-        "Error",
-        errorWindowContent,
-        errorWindowID,
-        false,
-        true,
-        "assets/images/error.png"
-    );
-});

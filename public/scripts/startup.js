@@ -7,7 +7,7 @@ function triggerStartupElements() {
     const startupElements = document.querySelectorAll(".startup-element");
 
     startupElements.forEach((element) => {
-        const delay = Math.floor(Math.random() * 2500);
+        const delay = Math.floor(Math.random() * 3000);
 
         setTimeout(() => {
             element.classList.remove("opacity-0");

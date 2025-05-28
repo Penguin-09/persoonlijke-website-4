@@ -9,31 +9,60 @@
         <link href="src/output.css" rel="stylesheet" />
 
         <!-- JS -->
-        <script src="scripts/script.js" defer></script>
-        <script src="scripts/windows.js" defer></script>
+        <script type="module" src="scripts/script.js" defer></script>
         <script src="scripts/startup.js" defer></script>
 
         <!-- Favicon -->
         <link
             rel="shortcut icon"
-            href="assets/images/window.png"
+            href="assets/images/operating-system.png"
             type="image/x-icon"
         />
     </head>
     <body>
-        <!-- welcome.exe -->
-        <button
-            class="flex flex-col items-center absolute m-2 opacity-0 startup-element z-10"
-            id="welcome-app"
-        >
-            <img
-                class="h-10"
-                src="assets/images/window.png"
-                alt="window icon"
-            />
+        <div class="flex flex-col w-30 absolute">
+            <!-- welcome.exe -->
+            <button
+                class="flex flex-col items-center m-2 opacity-0 startup-element z-10"
+                id="welcome-app"
+            >
+                <img
+                    class="h-10"
+                    src="assets/images/executable.png"
+                    alt="window icon"
+                />
 
-            <p class="white-text">welcome.exe</p>
-        </button>
+                <p class="white-text">welcome.exe</p>
+            </button>
+
+            <!-- about-me.txt -->
+            <button
+                class="flex flex-col items-center m-2 opacity-0 startup-element z-10"
+                id="about-me-app"
+            >
+                <img
+                    class="h-10"
+                    src="assets/images/text.png"
+                    alt="text icon"
+                />
+
+                <p class="white-text">about-me.txt</p>
+            </button>
+
+            <!-- me.png -->
+            <button
+                class="flex flex-col items-center m-2 opacity-0 startup-element z-10"
+                id="picture-of-me-app"
+            >
+                <img
+                    class="h-10"
+                    src="assets/images/picture.png"
+                    alt="picture icon"
+                />
+
+                <p class="break-all white-text">picture-of-me.png</p>
+            </button>
+        </div>
 
         <!-- Desktop -->
         <div
@@ -53,7 +82,7 @@
                 >
                     <img
                         class="h-6"
-                        src="assets/images/window.png"
+                        src="assets/images/operating-system.png"
                         alt="icon"
                     />
 
@@ -66,7 +95,7 @@
 
             <!-- Time -->
             <div
-                class="flex px-2 justify-center items-center border-3d-reverse gray-background opacity-0 startup-element"
+                class="flex px-2 justify-center items-center border-3d-reverse opacity-0 startup-element"
                 id="clock"
             >
                 Loading...
