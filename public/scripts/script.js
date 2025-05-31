@@ -151,6 +151,41 @@ pictureOfMeApp.addEventListener("click", () => {
     );
 });
 
+// CV
+const cvApp = document.getElementById("cv-app");
+cvApp.addEventListener("click", () => {
+    const cvAppID = `cv-window${Math.floor(Math.random() * 1000)}`;
+    const cvContent = `
+        <div class="h-[70vh] flex flex-col gap-2">
+            <embed
+                src="assets/CV_Son_Bram_van_der_Burg.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                type="application/pdf"
+                class="w-full sm:w-3xl h-[95%] border-3d-reverse"
+            />
+
+            <div class="flex justify-end">
+                <a
+                    class="w-fit px-1 border-3d button-3d"
+                    href="assets/CV_Son_Bram_van_der_Burg.pdf"
+                    download="assets/CV_Son_Bram_van_der_Burg.pdf"
+                >
+                    Download
+                </a>
+            </div>
+        </div>
+    `;
+
+    createWindow(
+        "Document Viewer",
+        cvContent,
+        cvAppID,
+        false,
+        false,
+        true,
+        "assets/images/document.png"
+    );
+});
+
 // System info
 const userInfoApp = document.getElementById("user-info-app");
 userInfoApp.addEventListener("click", () => {
@@ -187,29 +222,29 @@ userInfoApp.addEventListener("click", () => {
 });
 
 // Projects app
-// const projectsApp = document.getElementById("projects-app");
-// projectsApp.addEventListener("click", () => {
-//     const projectsAppID = `user-info-window${Math.floor(Math.random() * 1000)}`;
-//     const projectsAppContent = `
-//         <div class="flex gap-3">
-//             <p><span class="underline">F</span>ile</p>
-//             <p><span class="underline">E</span>dit</p>
-//             <p><span class="underline">V</span>iew</p>
-//             <p>F<span class="underline">a</span>vourites</p>
-//             <p><span class="underline">H</span>elp</p>
-//         </div>
-//     `;
+const projectsApp = document.getElementById("projects-app");
+projectsApp.addEventListener("click", () => {
+    const projectsAppID = `user-info-window${Math.floor(Math.random() * 1000)}`;
+    const projectsAppContent = `
+        <div class="flex gap-3">
+            <p><span class="underline">F</span>ile</p>
+            <p><span class="underline">E</span>dit</p>
+            <p><span class="underline">V</span>iew</p>
+            <p>F<span class="underline">a</span>vourites</p>
+            <p><span class="underline">H</span>elp</p>
+        </div>
+    `;
 
-//     createWindow(
-//         "Internet Explorer",
-//         projectsAppContent,
-//         projectsAppID,
-//         false,
-//         false,
-//         true,
-//         "assets/images/browser.png"
-//     );
-// });
+    createWindow(
+        "Internet Explorer",
+        projectsAppContent,
+        projectsAppID,
+        false,
+        false,
+        true,
+        "assets/images/browser.png"
+    );
+});
 
 // Tech Stack App
 const techStackApp = document.getElementById("tech-stack-app");
@@ -222,7 +257,7 @@ techStackApp.addEventListener("click", () => {
             <p class="mb-4">-------------------<br>MY TECH STACK<br>-------------------<br>I've learned a lot in my time as a web developer. Below is a list of every language and technology i have experience with.</p>
             <p class="mb-4">FRONT-END<br>HTML / CSS / JavaScript / Bootstrap / Tailwind CSS / Typescript / Figma</p>
             <p class="mb-4">BACK-END<br>PHP / SQL / C# / C++ / C / Figma / MongoDB</p>
-            <p class="mb-4">OTHER TOOLS<br>OOP / Git / SCRUM / Arduino</p>
+            <p class="mb-4">OTHER<br>OOP / Git / SCRUM / Arduino</p>
         </div>
     `;
 
