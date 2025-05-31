@@ -59,7 +59,7 @@ export function createWindow(
         </div>
     `;
 
-    desktop.insertAdjacentHTML("beforeend", newElement);
+    desktop.innerHTML = newElement;
 
     // Play error sound if the window is an error
     if (isError) {
@@ -95,7 +95,7 @@ function addWindowToTaskbar(
         </div>
     `;
 
-    taskbar.insertAdjacentHTML("beforeend", taskbarItem);
+    taskbar.innerHTML = taskbarItem;
 
     console.debug(`Added window to taskbar: ${title}`);
 }
