@@ -12,6 +12,11 @@
             content="Portfolio, Software Developer, Javascript, Tailwind"
         />
         <meta name="theme-color" content="#c3c3c3" />
+        <meta
+            name="theme-color"
+            content="#c3c3c3"
+            media="(prefers-color-scheme: dark)"
+        />
         <meta name="author" content="Son Bram van der Burg" />
         <title>Son95</title>
 
@@ -25,12 +30,13 @@
         <!-- Favicon -->
         <link
             rel="shortcut icon"
-            href="assets/images/operating-system.png"
+            href="assets/images/icons/operating-system.png"
             type="image/x-icon"
         />
     </head>
     <body>
-        <div class="absolute flex">
+        <!-- APPS -->
+        <div class="absolute flex flex-wrap">
             <div class="flex flex-col w-30">
                 <!-- welcome.exe -->
                 <button
@@ -39,7 +45,7 @@
                 >
                     <img
                         class="h-10"
-                        src="assets/images/executable.png"
+                        src="assets/images/icons/executable.png"
                         alt="window icon"
                     />
 
@@ -53,7 +59,7 @@
                 >
                     <img
                         class="h-10"
-                        src="assets/images/text.png"
+                        src="assets/images/icons/text.png"
                         alt="text icon"
                     />
 
@@ -67,25 +73,25 @@
                 >
                     <img
                         class="h-10"
-                        src="assets/images/picture.png"
+                        src="assets/images/icons/picture.png"
                         alt="picture icon"
                     />
 
                     <p class="break-all white-text">picture-of-me.png</p>
                 </button>
 
-                <!-- projects folder -->
+                <!-- projects.html -->
                 <button
                     class="flex flex-col items-center m-2 opacity-0 startup-element z-10"
                     id="projects-app"
                 >
                     <img
                         class="h-10"
-                        src="assets/images/folder.png"
-                        alt="folder icon"
+                        src="assets/images/icons/browser.png"
+                        alt="Browser icon"
                     />
 
-                    <p class="white-text">projects folder</p>
+                    <p class="break-all white-text">projects.html</p>
                 </button>
             </div>
 
@@ -97,7 +103,7 @@
                 >
                     <img
                         class="h-10"
-                        src="assets/images/document.png"
+                        src="assets/images/icons/document.png"
                         alt="CV icon"
                     />
 
@@ -111,7 +117,7 @@
                 >
                     <img
                         class="h-10"
-                        src="assets/images/operating-system.png"
+                        src="assets/images/icons/operating-system.png"
                         alt="window icon"
                     />
 
@@ -120,49 +126,860 @@
             </div>
 
             <div class="flex flex-col w-30">
-                <!-- tech-stack.txt -->
+                <!-- Tech Stack Folder -->
                 <button
                     class="flex flex-col items-center m-2 opacity-0 startup-element z-10"
                     id="tech-stack-app"
                 >
                     <img
                         class="h-10"
-                        src="assets/images/text.png"
-                        alt="window icon"
+                        src="assets/images/icons/folder.png"
+                        alt="folder icon"
                     />
 
-                    <p class="white-text">tech-stack.txt</p>
+                    <p class="white-text">Tech Stack Folder</p>
                 </button>
             </div>
         </div>
 
-        <!-- Desktop -->
+        <!-- DESKTOP -->
         <div
-            class="flex flex-wrap justify-center items-center h-[100vh] overflow-hidden"
+            class="flex flex-wrap justify-center items-center h-[93vh] overflow-auto"
             id="desktop"
-        ></div>
+        >
+            <!-- welcome.exe -->
+            <div
+                class="border-3d m-3 gray-background opacity-0 startup-element welcome-exe app-window z-20"
+            >
+                <div class="flex items-center justify-between w-full title-bar">
+                    <p class="white-text pe-1">Welcome!</p>
 
-        <!-- Taskbar -->
+                    <button
+                        class="flex justify-center items-center w-6 h-6 font-bold border-3d button-3d gray-background"
+                        onclick="document.querySelectorAll('.welcome-exe').forEach(element => element.classList.add('hidden'));"
+                    >
+                        X
+                    </button>
+                </div>
+
+                <div class="p-3">
+                    <div class="flex flex-col w-full sm:w-md gap-2">
+                        <h1 class="font-bold text-2xl">Welcome to Son95!</h1>
+
+                        <div class="border-3d-reverse beige-background p-1">
+                            Son95 is a recreation of the classic Windows 95
+                            experience, reimagined as a personal portfolio. With
+                            Son95, you can discover information about me, my
+                            projects, and more.
+                        </div>
+
+                        <div class="w-full flex justify-end">
+                            <button
+                                class="px-1 border-3d button-3d"
+                                onclick="document.querySelectorAll('.welcome-exe').forEach(element => element.classList.add('hidden'));"
+                            >
+                                Got it!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- about-me.txt -->
+            <div
+                class="border-3d m-3 gray-background about-me-txt hidden app-window z-20"
+            >
+                <div class="flex items-center justify-between w-full title-bar">
+                    <p class="white-text pe-1">about-me.txt</p>
+
+                    <button
+                        class="flex justify-center items-center w-6 h-6 font-bold border-3d button-3d gray-background"
+                        onclick="document.querySelectorAll('.about-me-txt').forEach(element => element.classList.add('hidden'));"
+                    >
+                        X
+                    </button>
+                </div>
+
+                <div class="p-3 pt-2">
+                    <div class="flex mb-2 gap-2">
+                        <p><span class="underline">F</span>ile</p>
+                        <p><span class="underline">E</span>dit</p>
+                        <p><span class="underline">V</span>iew</p>
+                        <p><span class="underline">T</span>ools</p>
+                        <p><span class="underline">H</span>elp</p>
+                    </div>
+
+                    <div
+                        class="p-2 w-full sm:w-md border-3d-reverse bg-[#ffffff]"
+                    >
+                        <p class="mb-4">
+                            -------------------<br />ABOUT ME<br />-------------------<br />Hi!,
+                            I'm Son, a full-stack web developer and student at
+                            Bit Academy.
+                        </p>
+                        <p>
+                            I have experience with many different technologies
+                            and programming languages, and I'm particularly
+                            interested in creating web applications. I was
+                            interested in computers and programming from a young
+                            age, attending programming courses and camps during
+                            most of my childhood.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- picture-of-me.png -->
+            <div
+                class="border-3d m-3 gray-background picture-of-me-png hidden app-window z-20"
+            >
+                <div class="flex items-center justify-between w-full title-bar">
+                    <p class="white-text pe-1">picture-of-me.png</p>
+
+                    <button
+                        class="flex justify-center items-center w-6 h-6 font-bold border-3d button-3d gray-background"
+                        onclick="document.querySelectorAll('.picture-of-me-png').forEach(element => element.classList.add('hidden'));"
+                    >
+                        X
+                    </button>
+                </div>
+
+                <div class="p-3 pt-2">
+                    <div class="flex mb-2 gap-2">
+                        <p><span class="underline">F</span>ile</p>
+                        <p><span class="underline">E</span>dit</p>
+                        <p><span class="underline">V</span>iew</p>
+                        <p><span class="underline">T</span>ools</p>
+                        <p><span class="underline">H</span>elp</p>
+                    </div>
+
+                    <div class="border-3d-reverse bg-[#000000]">
+                        <img src="assets/images/me.png" alt="Picture of me" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- projects.html -->
+            <div
+                class="border-3d m-3 gray-background internet-explorer hidden app-window z-20"
+            >
+                <div class="flex items-center justify-between w-full title-bar">
+                    <p class="white-text pe-1">Internet Explorer</p>
+
+                    <button
+                        class="flex justify-center items-center w-6 h-6 font-bold border-3d button-3d gray-background"
+                        onclick="document.querySelectorAll('.internet-explorer').forEach(element => element.classList.add('hidden'));"
+                    >
+                        X
+                    </button>
+                </div>
+
+                <div class="p-3 pt-2">
+                    <div class="flex flex-wrap mb-2 gap-2">
+                        <div class="flex gap-2">
+                            <p><span class="underline">F</span>ile</p>
+
+                            <p><span class="underline">E</span>dit</p>
+
+                            <p><span class="underline">V</span>iew</p>
+
+                            <p><span class="underline">T</span>ools</p>
+
+                            <p><span class="underline">H</span>elp</p>
+                        </div>
+
+                        <select
+                            name="Favourites"
+                            class="font-bold rounded-none"
+                            id="favourites"
+                        >
+                            <option
+                                class="gray-background"
+                                value="type-it-down"
+                                selected
+                            >
+                                Type It Down Project
+                            </option>
+                            <option class="gray-background" value="kwoatle">
+                                Kwoatle Mobile App
+                            </option>
+                            <option
+                                class="gray-background"
+                                value="secdesk-security-management-system"
+                            >
+                                SecDesk Security Management System
+                            </option>
+                            <option
+                                class="gray-background"
+                                value="modino-website"
+                            >
+                                Modino Website
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Type it down project -->
+                    <div
+                        class="flex flex-col gap-3 items-center border-3d-reverse p-2 browser-background w-full sm:w-2xl overflow-y-auto max-h-[70vh] min-h-[60vh] project"
+                        id="type-it-down"
+                    >
+                        <div class="flex flex-col items-center w-full sm:w-lg">
+                            <h1
+                                class="text-3xl text-center items-center font-bold"
+                            >
+                                Type It Down Project
+                            </h1>
+
+                            <p class="text-lg">
+                                For
+                                <a
+                                    href="https://www.assistive-innovations.com/"
+                                    target="_blank"
+                                    >Assistive Innovations</a
+                                >
+                            </p>
+
+                            <p class="text-lg">January 2025 - Still ongoing</p>
+
+                            <p class="text-lg">C++ / Arduino</p>
+                        </div>
+
+                        <div
+                            class="flex flex-wrap sm:flex-nowrap justify-center items-center w-full sm:w-lg gap-3"
+                        >
+                            <p class="text-center">
+                                I am currently helping Assistive Innovations
+                                with the "Type It Down" research project. This
+                                project aims to develop a device that helps
+                                people with Parkinson's disease with performing
+                                tasks like typing by stimulating muscles with
+                                vibrations. I assist with the programming of
+                                these devices.
+                            </p>
+
+                            <img
+                                class="h-40 shadow"
+                                src="assets/images/projects/type-it-down.png"
+                                alt="Type it down project banner"
+                            />
+                        </div>
+
+                        <div>
+                            <a
+                                href="https://www.assistive-innovations.com/"
+                                target="_blank"
+                                >Assistive Innovations</a
+                            >
+                            |
+                            <a
+                                href="https://www.parkinson.nl/innovatie/parkinsonnl-financiert-4-innovatieprojecten-2023/"
+                                target="_blank"
+                                >Parkinson nl</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Kwoatle -->
+                    <div
+                        class="flex flex-col gap-3 items-center border-3d-reverse p-2 browser-background w-full sm:w-2xl overflow-y-auto max-h-[70vh] min-h-[60vh] hidden project"
+                        id="kwoatle"
+                    >
+                        <div class="flex flex-col items-center w-full sm:w-lg">
+                            <h1
+                                class="text-3xl text-center items-center font-bold"
+                            >
+                                Kwoatle Mobile App
+                            </h1>
+
+                            <p class="text-lg">
+                                With
+                                <a href="https://snevver.nl/" target="_blank"
+                                    >Sven Hoeksema</a
+                                >
+                            </p>
+
+                            <p class="text-lg">February 2025 - April 2025</p>
+
+                            <p class="text-lg">
+                                TypeScript / CSS / React / Expo
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex flex-wrap sm:flex-nowrap justify-center items-center w-full sm:w-lg gap-3"
+                        >
+                            <p class="text-center">
+                                A mobile app developed together with a fellow
+                                student. This personal project was aimed at
+                                strengthening our skills in TypeScript and the
+                                React framework. The app is available to install
+                                for free on Google Play.
+                            </p>
+
+                            <img
+                                class="h-40 shadow"
+                                src="assets/images/projects/kwoatle.png"
+                                alt="Kwoatle project banner"
+                            />
+                        </div>
+
+                        <div>
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.snevver.Kwoatle&pcampaignid=web_share"
+                                target="_blank"
+                                >Google Play Store Page</a
+                            >
+                            |
+                            <a href="https://snevver.nl/" target="_blank"
+                                >Sven Hoeksema</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- SecDesk Security Management System -->
+                    <div
+                        class="flex flex-col gap-3 items-center border-3d-reverse p-2 browser-background w-full sm:w-2xl overflow-y-auto max-h-[70vh] min-h-[60vh] hidden project"
+                        id="secdesk-security-management-system"
+                    >
+                        <div class="flex flex-col items-center w-full sm:w-lg">
+                            <h1
+                                class="text-3xl text-center items-center font-bold"
+                            >
+                                SecDesk Security Management System
+                            </h1>
+
+                            <p class="text-lg">
+                                For
+                                <a href="https://secdesk.com/" target="_blank"
+                                    >SecDesk</a
+                                >, with
+                                <a href="https://snevver.nl/" target="_blank"
+                                    >Sven Hoeksema</a
+                                >
+                                and
+                                <a
+                                    href="https://github.com/donbithub"
+                                    target="_blank"
+                                    >Doncan Dayan</a
+                                >
+                            </p>
+
+                            <p class="text-lg">May 2025 - Still ongoing</p>
+
+                            <p class="text-lg">
+                                PHP / SQL / HTML / CSS / JavaScript / Bootstrap
+                                / OOP / SCRUM
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex flex-wrap sm:flex-nowrap justify-center items-center w-full sm:w-lg gap-3"
+                        >
+                            <p class="text-center">
+                                We are currently developing a web application
+                                for a cyber-security company called SecDesk.
+                                This application will be used by SecDesk
+                                employees and their clients to make the client's
+                                digital infrastructure more secure.
+                            </p>
+                        </div>
+
+                        <div>
+                            <a href="https://secdesk.com/" target="_blank"
+                                >SecDesk</a
+                            >
+                            |
+                            <a href="https://snevver.nl/" target="_blank"
+                                >Sven Hoeksema</a
+                            >
+                            |
+                            <a
+                                href="https://github.com/donbithub"
+                                target="_blank"
+                                >Doncan Dayan</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Modino website -->
+                    <div
+                        class="flex flex-col gap-3 items-center border-3d-reverse p-2 browser-background w-full sm:w-2xl overflow-y-auto max-h-[70vh] min-h-[60vh] hidden project"
+                        id="modino-website"
+                    >
+                        <div class="flex flex-col items-center w-full sm:w-lg">
+                            <h1
+                                class="text-3xl text-center items-center font-bold"
+                            >
+                                Modino website
+                            </h1>
+
+                            <p class="text-lg">For Bart van der Burg</p>
+
+                            <p class="text-lg">November 2024 - December 2024</p>
+
+                            <p class="text-lg">
+                                HTML / CSS / JavaScript / Bootstrap
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex flex-wrap sm:flex-nowrap justify-center items-center w-full sm:w-lg gap-3"
+                        >
+                            <p class="text-center">
+                                A website developed for a client (who also
+                                happents to be my dad, but hey, we all have to
+                                start somewhere), featuring information about
+                                woodworking projects he has made. The project
+                                details are dynamically loaded on the website
+                                via a JSON file.
+                            </p>
+
+                            <img
+                                class="h-40 shadow"
+                                src="assets/images/projects/modino.png"
+                                alt="Modino banner"
+                            />
+                        </div>
+
+                        <a href="https://www.modino.nl/" target="_blank"
+                            >Modino Website</a
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- cv.pdf -->
+            <div
+                class="border-3d m-3 gray-background cv-pdf hidden app-window z-20"
+            >
+                <div class="flex items-center justify-between w-full title-bar">
+                    <p class="white-text pe-1">cv.pdf</p>
+
+                    <button
+                        class="flex justify-center items-center w-6 h-6 font-bold border-3d button-3d gray-background"
+                        onclick="document.querySelectorAll('.cv-pdf').forEach(element => element.classList.add('hidden'));"
+                    >
+                        X
+                    </button>
+                </div>
+
+                <div class="p-3 pt-2">
+                    <div class="h-[70vh] flex flex-col gap-2">
+                        <div class="flex gap-2">
+                            <p><span class="underline">F</span>ile</p>
+                            <p><span class="underline">E</span>dit</p>
+                            <p><span class="underline">V</span>iew</p>
+                            <p><span class="underline">T</span>ools</p>
+                            <p><span class="underline">H</span>elp</p>
+                        </div>
+
+                        <embed
+                            src="assets/cv/CV_Son_Bram_van_der_Burg.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                            type="application/pdf"
+                            class="w-full sm:w-3xl h-[95%] border-3d-reverse"
+                        />
+
+                        <div class="flex justify-end">
+                            <a
+                                class="w-fit px-1 border-3d button-3d no-link"
+                                href="assets/cv/CV_Son_Bram_van_der_Burg.pdf"
+                                download="assets/cv/CV_Son_Bram_van_der_Burg.pdf"
+                            >
+                                Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System info -->
+            <div
+                class="border-3d m-3 gray-background user-settings hidden app-window z-20"
+            >
+                <div class="flex items-center justify-between w-full title-bar">
+                    <p class="white-text pe-1">User Info Settings</p>
+
+                    <button
+                        class="flex justify-center items-center w-6 h-6 font-bold border-3d button-3d gray-background"
+                        onclick="document.querySelectorAll('.user-settings').forEach(element => element.classList.add('hidden'));"
+                    >
+                        X
+                    </button>
+                </div>
+
+                <div class="p-3">
+                    <div class="flex items-center p-5 gap-7">
+                        <img
+                            class="h-30"
+                            src="assets/images/system.png"
+                            alt="user icon"
+                        />
+
+                        <div>
+                            <p>General info:</p>
+                            <p class="ml-5">Son Bram van der Burg</p>
+                            <p class="ml-5 mb-5">17 years old</p>
+
+                            <p>Contact info:</p>
+                            <p class="ml-5">son@vdburg.site</p>
+                            <p class="ml-5 mb-5">+31 6 570 466 79</p>
+
+                            <p>Links</p>
+                            <a
+                                class="ml-5 link-text"
+                                href="https://www.linkedin.com/in/son-bram/"
+                                target="_blank"
+                                >LinkedIn</a
+                            ><br />
+                            <a
+                                class="ml-5 link-text"
+                                href="https://github.com/Penguin-09"
+                                target="_blank"
+                                >GitHub</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Folder -->
+            <div
+                class="border-3d m-3 gray-background file-explorer hidden app-window z-20"
+            >
+                <div class="flex items-center justify-between w-full title-bar">
+                    <p class="white-text pe-1">File Explorer</p>
+
+                    <button
+                        class="flex justify-center items-center w-6 h-6 font-bold border-3d button-3d gray-background"
+                        onclick="document.querySelectorAll('.file-explorer').forEach(element => element.classList.add('hidden'));"
+                    >
+                        X
+                    </button>
+                </div>
+
+                <div class="p-3 pt-2">
+                    <div class="flex mb-2 gap-2">
+                        <p><span class="underline">F</span>ile</p>
+                        <p><span class="underline">E</span>dit</p>
+                        <p><span class="underline">V</span>iew</p>
+                        <p><span class="underline">T</span>ools</p>
+                        <p><span class="underline">H</span>elp</p>
+                    </div>
+
+                    <div
+                        class="p-1 w-full overflow-y-auto sm:w-md h-[60vh] border-3d-reverse beige-background"
+                    >
+                        <div class="flex items-center gap-2">
+                            <img
+                                src="assets/images/icons/folder.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Desktop</p>
+                        </div>
+
+                        <div class="flex items-center ml-5 gap-2">
+                            <img
+                                src="assets/images/icons/folder.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Tech Stack Folder</p>
+                        </div>
+
+                        <div class="flex items-center ml-10 gap-2">
+                            <img
+                                src="assets/images/icons/folder.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Front-end</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>HTML</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>CSS</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Javascript</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Typescript</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Bootstrap</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Tailwind CSS</p>
+                        </div>
+
+                        <div class="flex items-center ml-10 gap-2">
+                            <img
+                                src="assets/images/icons/folder.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Back-end</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>PHP</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>SQL/MySQL</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>C#</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>C++</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>C</p>
+                        </div>
+
+                        <div class="flex items-center ml-10 gap-2">
+                            <img
+                                src="assets/images/icons/folder.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Other</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Git</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Object Oriented Programming</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>SCRUM</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Supabase</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>UML</p>
+                        </div>
+
+                        <div class="flex items-center ml-15 gap-2">
+                            <img
+                                src="assets/images/icons/executable.png"
+                                alt="Folder icon"
+                                class="h-5"
+                            />
+                            <p>Arduino</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TASKBAR -->
         <div
             class="fixed flex justify-between items-center bottom-0 w-full p-1 border-3d-top gray-background opacity-0 startup-element"
         >
             <div class="flex gap-3">
                 <!-- Start button -->
-                <button
-                    class="flex justify-center items-center p-1 border-3d button-3d"
-                    id="start-button"
-                >
+                <div class="flex justify-center items-center p-1 border-3d">
                     <img
                         class="h-6"
-                        src="assets/images/operating-system.png"
+                        src="assets/images/icons/operating-system.png"
                         alt="icon"
                     />
 
                     <p class="ml-1 font-bold">Start</p>
-                </button>
+                </div>
 
                 <!-- Open windows -->
-                <div class="flex gap-1" id="taskbar-apps"></div>
+                <div class="flex gap-1" id="taskbar-apps">
+                    <!-- Welcome! -->
+                    <div
+                        class="flex border-3d-reverse p-1 app-window welcome-exe"
+                    >
+                        <img
+                            class="h-6 me-1"
+                            src="assets/images/icons/executable.png"
+                            alt="Welcome! icon"
+                        />
+
+                        <p>Welcome!</p>
+                    </div>
+
+                    <!-- about-me.txt -->
+                    <div
+                        class="flex border-3d-reverse p-1 app-window hidden about-me-txt"
+                    >
+                        <img
+                            class="h-6 me-1"
+                            src="assets/images/icons/text.png"
+                            alt="about-me.txt icon"
+                        />
+
+                        <p>about-me.txt</p>
+                    </div>
+
+                    <!-- picture-of-me.png -->
+                    <div
+                        class="flex border-3d-reverse p-1 app-window hidden picture-of-me-png"
+                    >
+                        <img
+                            class="h-6 me-1"
+                            src="assets/images/icons/picture.png"
+                            alt="picture-of-me.png icon"
+                        />
+
+                        <p>picture-of-me.png</p>
+                    </div>
+
+                    <!-- projects.html -->
+                    <div
+                        class="flex border-3d-reverse p-1 app-window hidden internet-explorer"
+                    >
+                        <img
+                            class="h-6 me-1"
+                            src="assets/images/icons/browser.png"
+                            alt="Internet explorer icon"
+                        />
+
+                        <p>Internet Explorer</p>
+                    </div>
+
+                    <!-- cv.pdf -->
+                    <div
+                        class="flex border-3d-reverse p-1 app-window hidden cv-pdf"
+                    >
+                        <img
+                            class="h-6 me-1"
+                            src="assets/images/icons/document.png"
+                            alt="cv.pdf icon"
+                        />
+
+                        <p>cv.pdf</p>
+                    </div>
+
+                    <!-- User settings -->
+                    <div
+                        class="flex border-3d-reverse p-1 app-window hidden user-settings"
+                    >
+                        <img
+                            class="h-6 me-1"
+                            src="assets/images/icons/operating-system.png"
+                            alt="User info settings icon"
+                        />
+
+                        <p>User Info Settings</p>
+                    </div>
+
+                    <!-- Tech Stack Folder -->
+                    <div
+                        class="flex border-3d-reverse p-1 app-window hidden file-explorer"
+                    >
+                        <img
+                            class="h-6 me-1"
+                            src="assets/images/icons/folder.png"
+                            alt="File Explorer icon"
+                        />
+
+                        <p>File Explorer</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Time -->

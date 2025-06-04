@@ -1,5 +1,3 @@
-console.info("Startup script initialized");
-
 /**
  * Slowly reveal all elements
  */
@@ -13,8 +11,18 @@ function triggerStartupElements() {
             element.classList.remove("opacity-0");
         }, delay);
     });
+}
 
-    console.info("All elements loaded");
+/**
+ * Attach a sound effect to the document
+ */
+function attachSoundEffectToDocument() {
+    const clickSound = new Audio("assets/sounds/click.wav");
+
+    document.addEventListener("click", () => {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    });
 }
 
 /**
@@ -36,4 +44,5 @@ function updateClock() {
 }
 
 triggerStartupElements();
-setInterval(updateClock, 3000);
+attachSoundEffectToDocument();
+setInterval(updateClock, 5000);
