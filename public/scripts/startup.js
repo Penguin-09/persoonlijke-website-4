@@ -1,7 +1,25 @@
+const clickSound = new Audio("assets/sounds/click.wav");
+const startupSound = new Audio("assets/sounds/startup.wav");
+
 /**
  * Slowly reveal all elements
  */
 function triggerStartupElements() {
+    // Remove loading screen
+    document.getElementById("loading-screen").remove();
+
+    // Play startup sound
+    if (document.cookie.split("; ").find((row) => row.startsWith("audio=on"))) {
+        startupSound.currentTime = 0;
+        startupSound.play();
+    }
+
+    // Show main elements
+    document.querySelectorAll(".hidden-on-start").forEach((element) => {
+        element.classList.remove("hidden");
+    });
+
+    // Slowly load all elements on screen
     const startupElements = document.querySelectorAll(".startup-element");
 
     startupElements.forEach((element) => {
@@ -17,11 +35,15 @@ function triggerStartupElements() {
  * Attach a sound effect to the document
  */
 function attachSoundEffectToDocument() {
-    const clickSound = new Audio("assets/sounds/click.wav");
-
     document.addEventListener("click", () => {
-        clickSound.currentTime = 0;
-        clickSound.play();
+        if (
+            document.cookie
+                .split("; ")
+                .find((row) => row.startsWith("audio=on"))
+        ) {
+            clickSound.currentTime = 0;
+            clickSound.play();
+        }
     });
 }
 
@@ -43,6 +65,9 @@ function updateClock() {
     clockElement.innerHTML = `${hour}:${minute} ${timeOfDay}`;
 }
 
-triggerStartupElements();
+document
+    .getElementById("start-button")
+    .addEventListener("click", () => triggerStartupElements());
+
 attachSoundEffectToDocument();
 setInterval(updateClock, 5000);

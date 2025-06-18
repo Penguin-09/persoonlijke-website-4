@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="Personal website of Son Bram van der Burg"
+            content="Son95 is a recreation of the classic Windows 95 experience, reimagined as a personal portfolio."
         />
         <meta
             name="keywords"
@@ -35,8 +35,44 @@
         />
     </head>
     <body>
+        <!-- Startup screen -->
+        <div class="w-screen h-screen bg-black" id="loading-screen">
+            <button
+                class="absolute right-0 m-2 p-1 px-2 font-bold gray-background border-3d button-3d"
+                id="toggle-audio-button"
+            >
+                Enable Audio
+            </button>
+
+            <div
+                class="flex h-screen flex-col justify-center items-center gap-4"
+            >
+                <div class="flex flex-col gap-1">
+                    <!-- Logo -->
+                    <img
+                        class="h-30"
+                        src="assets/images/system.png"
+                        alt="System logo"
+                    />
+
+                    <!-- Title -->
+                    <p class="text-5xl white-text">Son95</p>
+                </div>
+
+                <div>
+                    <!-- Start Button -->
+                    <button
+                        class="p-1 px-8 text-xl font-bold gray-background border-3d button-3d"
+                        id="start-button"
+                    >
+                        Start
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- APPS -->
-        <div class="absolute flex flex-wrap">
+        <div class="absolute flex flex-wrap hidden hidden-on-start">
             <div class="flex flex-col w-30">
                 <!-- welcome.exe -->
                 <button
@@ -144,7 +180,7 @@
 
         <!-- DESKTOP -->
         <div
-            class="flex flex-wrap justify-center items-center h-[93vh] overflow-auto"
+            class="flex flex-wrap justify-center items-center h-[93vh] overflow-auto hidden hidden-on-start"
             id="desktop"
         >
             <!-- welcome.exe -->
@@ -166,11 +202,18 @@
                     <div class="flex flex-col w-full sm:w-md gap-2">
                         <h1 class="font-bold text-2xl">Welcome to Son95!</h1>
 
-                        <div class="border-3d-reverse beige-background p-1">
-                            Son95 is a recreation of the classic Windows 95
-                            experience, reimagined as a personal portfolio. With
-                            Son95, you can discover information about me, my
-                            projects, and more.
+                        <div class="border-3d-reverse beige-background p-2">
+                            <p class="mb-4">
+                                Hi!, I'm Son, a full-stack web developer and
+                                student at Bit Academy.
+                            </p>
+
+                            <p>
+                                Son95 is a recreation of the classic Windows 95
+                                experience, reimagined as a personal portfolio.
+                                With Son95, you can discover information about
+                                me, my projects, and more.
+                            </p>
                         </div>
 
                         <div class="w-full flex justify-end">
@@ -978,7 +1021,7 @@
                         <div>
                             <p>General info:</p>
                             <p class="ml-5">Son Bram van der Burg</p>
-                            <p class="ml-5 my-5">Full-stack web developer</p>
+                            <p class="ml-5">Full-stack web developer</p>
                             <p class="ml-5 mb-5">17 years old</p>
 
                             <p>Contact info:</p>
@@ -1243,10 +1286,10 @@
 
         <!-- TASKBAR -->
         <div
-            class="fixed flex justify-between items-center bottom-0 w-full p-1 border-3d-top gray-background opacity-0 startup-element"
+            class="fixed flex justify-between items-center bottom-0 w-full p-1 border-3d-top gray-background hidden hidden-on-start"
         >
             <div class="flex gap-3">
-                <!-- Start button -->
+                <!-- Start Menu button -->
                 <div class="flex justify-center items-center p-1 border-3d">
                     <img
                         class="h-6"
